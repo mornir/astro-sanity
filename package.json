@@ -1,0 +1,19 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build --experimental-static-build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.23.0",
+    "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "@sanity/image-url": "^1.0.1",
+    "picosanity": "^4.0.0"
+  }
+}

@@ -1,0 +1,26 @@
+---
+import sanity from '@/lib/sanity.js'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+
+
+export async function getStaticPaths() {
+  const movies = await sanity.fetch('*[_type == "movie"]')
+
+  return movies.map((movie) => {
+    return {
+      params: { slug: movie.slug.current },
+      props: { movie },
+    };
+  });
+}
+
+const { slug } = Astro.request.params;
+const { movie } = Astro.props;
+
+---
+<BaseLayout>
+  <div>
+    <h1 class=" text-xl text-blue-600">Movie details {slug}: {movie.title}</h1>
+
+  </div>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import urlFor from '@/lib/imgBuilder'
+
+const { movie = {} } = Astro.props;
+---
+
+<article class="relative overflow-hidden duration-200 ease-out hover:scale-105 group">
+  <a href={'/movies/' + movie.slug.current } class=" group-hover:brightness-105">
+    <img src={urlFor(movie.poster)} alt={movie.title} >
+  </a>
+  <div
+      class="w-52 h-14 opacity-10 absolute bottom-[59%] left-[8%] rotate-[35deg] duration-500 origin-top-right group-hover:scale-y-200 group-hover:opacity-20 bg-gradient-to-b from-transparent to-white filter blur-sm"
+    ></div>
+</article>
